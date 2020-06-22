@@ -66,3 +66,7 @@ variable "weekDays" {
   type = list(string)
   default = []
 }
+
+variable "deploy" {
+  default = true
+}

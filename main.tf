@@ -3,7 +3,7 @@
 #https://docs.microsoft.com/en-us/rest/api/automation/softwareupdateconfigurations/create
 
 resource "azurerm_template_deployment" "linux" {
-    count               = lower(var.operatingSystem) == "linux" ? 1 : 0
+    count               = lower(var.operatingSystem) == "linux" && var.deploy ? 1 : 0
     name                = var.name
     resource_group_name = var.resource_group_name
 
@@ -55,7 +55,7 @@ resource "azurerm_template_deployment" "linux" {
 }
 
 resource "azurerm_template_deployment" "windows" {
-    count               = lower(var.operatingSystem) == "windows" ? 1 : 0
+    count               = lower(var.operatingSystem) == "windows" && var.deploy ? 1 : 0
     name                = var.name
     resource_group_name = var.resource_group_name
 
