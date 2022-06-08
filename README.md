@@ -61,8 +61,8 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [azurerm_template_deployment.linux](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/template_deployment) | resource |
-| [azurerm_template_deployment.windows](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/template_deployment) | resource |
+| [azurerm_resource_group_template_deployment.linux](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/resource_group_template_deployment) | resource |
+| [azurerm_resource_group_template_deployment.windows](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/resource_group_template_deployment) | resource |
 | [null_resource.linux](https://registry.terraform.io/providers/hashicorp/null/latest/docs/resources/resource) | resource |
 | [null_resource.windows](https://registry.terraform.io/providers/hashicorp/null/latest/docs/resources/resource) | resource |
 | [time_offset.tomorrow](https://registry.terraform.io/providers/hashicorp/time/latest/docs/resources/offset) | resource |
@@ -72,7 +72,7 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_azurerm_automation_account"></a> [azurerm\_automation\_account](#input\_azurerm\_automation\_account) | azurerm\_automation\_account object | `object({name = string})` | n/a | yes |
+| <a name="input_azurerm_automation_account"></a> [azurerm\_automation\_account](#input\_azurerm\_automation\_account) | azurerm\_automation\_account object | `object({ name = string })` | n/a | yes |
 | <a name="input_duration"></a> [duration](#input\_duration) | Time in hour permitted for updates | `string` | `"2"` | no |
 | <a name="input_interval"></a> [interval](#input\_interval) | Integer for interval | `number` | `1` | no |
 | <a name="input_linux_update_types"></a> [linux\_update\_types](#input\_linux\_update\_types) | Types of updates to apply when OS type is Linux. One or more of: Critical, Other, Security. | `string` | `"Critical, Other, Security"` | no |

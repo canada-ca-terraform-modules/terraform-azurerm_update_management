@@ -14,12 +14,12 @@ locals {
 #https://github.com/terraform-providers/terraform-provider-azurerm/issues/2812
 #https://docs.microsoft.com/en-us/rest/api/automation/softwareupdateconfigurations/create
 
-resource "azurerm_template_deployment" "linux" {
+resource "azurerm_resource_group_template_deployment" "linux" {
   count               = lower(var.operatingSystem) == "linux" ? 1 : 0
   name                = var.name
   resource_group_name = var.resource_group_name
 
-  template_body = <<DEPLOY
+  template_content = <<DEPLOY
     {
         "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
         "contentVersion": "1.0.0.0",
@@ -79,12 +79,12 @@ resource "null_resource" "linux" {
   }
 }
 
-resource "azurerm_template_deployment" "windows" {
+resource "azurerm_resource_group_template_deployment" "windows" {
   count               = lower(var.operatingSystem) == "windows" ? 1 : 0
   name                = var.name
   resource_group_name = var.resource_group_name
 
-  template_body = <<DEPLOY
+  template_content = <<DEPLOY
     {
         "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
         "contentVersion": "1.0.0.0",
