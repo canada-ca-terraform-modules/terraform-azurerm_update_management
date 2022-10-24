@@ -65,3 +65,7 @@ variable "weekDays" {
   type        = list(string)
   default     = []
 }
+variable "frenquency" {
+  description = "Frequency of update management"
+  type        = string
+}
