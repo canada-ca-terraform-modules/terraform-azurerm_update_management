@@ -67,7 +67,7 @@ variable "weekDays" {
 }
 variable "monthDays" {
   description = "Days of the month that the job should execute on. Must be between 1 and 31."
-  type        = list(string)
+  type        = list(number)
   default     = []
 }
 

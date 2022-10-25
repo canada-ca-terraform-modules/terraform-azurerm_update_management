@@ -49,12 +49,12 @@ resource "azurerm_resource_group_template_deployment" "linux" {
                         }
                     },
                     "scheduleInfo": {
-                        "frequency": "Week",
+                        "frequency": "${var.frequency}",
                         "startTime": "${local.update_date}T${local.update_time}:00-00:00",
                         "timeZone": "${var.timeZone}",
                         "interval": ${var.interval},
                         "advancedSchedule": {
-                            "weekDays": ${jsonencode(var.weekDays)}
+                            "weekDays": ${jsonencode(var.weekDays)},
                             "monthDays": ${jsonencode(var.monthDays)}
                         }
                     }
@@ -115,12 +115,12 @@ resource "azurerm_resource_group_template_deployment" "windows" {
                         }
                     },
                     "scheduleInfo": {
-                        "frequency": "Week",
+                        "frequency": "${var.frequency}",
                         "startTime": "${local.update_date}T${local.update_time}:00-00:00",
                         "timeZone": "${var.timeZone}",
                         "interval": ${var.interval},
                         "advancedSchedule": {
-                            "weekDays": ${jsonencode(var.weekDays)}
+                            "weekDays": ${jsonencode(var.weekDays)},
                             "monthDays": ${jsonencode(var.monthDays)}
                         }
                     }
